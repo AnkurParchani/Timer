@@ -1,0 +1,112 @@
+body {
+  font-family: "Inter";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  background-color: black;
+  overflow: hidden;
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.settingsContainer {
+  margin-top: 10px;
+  color: white;
+}
+.settingsContainer h1 {
+  font-size: 30px;
+  background: linear-gradient(to right, blue 50%, white 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.settingsContainer .container {
+  margin-top: 20px;
+}
+input {
+  width: 60px;
+  border: none;
+  background-color: #212121;
+  font-size: 19px;
+  color: white;
+}
+input:focus {
+  outline: none;
+  border: none;
+  color: blue;
+}
+label {
+  font-size: 19px;
+}
+.seperateInput {
+  background-color: #212121;
+  color: white;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  border: 2px solid #212121;
+  padding: 12px 0px;
+  width: 480px;
+}
+.seperateInput:focus-within {
+  border-color: blue;
+  color: blue;
+}
+.timerContainer {
+  margin-top: 50px;
+  font-size: 60px;
+}
+
+.actionButtons {
+  margin-top: 30px;
+  padding: 0px;
+}
+.actionButton {
+  background-color: blue;
+  font-size: 32px;
+  border: none;
+  border-radius: 66%;
+  color: white;
+}
+.startButton {
+  padding: 10px 22px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+}
+.pauseButton {
+  padding: 10px 25px;
+  margin: 0px 30px;
+}
+.resetButton {
+  padding: 10px 19px;
+  margin: 0px 30px;
+  background-color: #4a4a4a;
+}
+.playButton {
+  padding: 10px 25px;
+  margin: 0px 30px;
+}
+.timerButtonContainer {
+  position: absolute;
+  bottom: 5%;
+}
+/* Media queries */
+@media (max-width: 500px) {
+  .appBody {
+    width: 300px;
+  }
+  input {
+    width: 40px;
+  }
+}
+@media (min-width: 500px) {
+  .seperateInput {
+    margin: 12px;
+  }
+}
