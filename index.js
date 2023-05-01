@@ -6,12 +6,32 @@ const settingsContainer = document.querySelector(".settingsContainer");
 const startBtn = document.querySelector(".startButton");
 
 // Global functions
+let wakeLock = null;
 let workLapsArr = [];
 let restLapsArr = [];
 let count;
 let timerInterval;
 let workTimeAudio = new Audio("./media/workAlarm.mp4");
 let restTimeAudio = new Audio("./media/restAlarm.mp4");
+
+// Preventing screen from sleeping using wakelock
+const requestWakeLock = async () => {
+  try {
+    // Starting wakeLock for the first time
+    wakeLock = await navigator.wakeLock.request("screen");
+
+    // Checking if the user has left the page and returned again, then starting wakelock again
+    document.addEventListener("visibilitychange", async () => {
+      if (document.visibilityState === "visible" && wakeLock.released) {
+        wakeLock = await navigator.wakeLock.request("screen");
+      }
+    });
+  } catch (err) {
+    console.error(`${err.name}, ${err.message}`);
+  }
+};
+
+requestWakeLock();
 
 // Creating the FUNCTION
 function timerFunction() {
