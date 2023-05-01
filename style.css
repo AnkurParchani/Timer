@@ -81,20 +81,23 @@ label {
 }
 .pauseButton {
   padding: 10px 25px;
-  margin: 0px 30px;
+  margin-right: 20px;
 }
 .resetButton {
   padding: 10px 19px;
-  margin: 0px 30px;
   background-color: #4a4a4a;
+  margin-left: 20px;
 }
 .playButton {
   padding: 10px 25px;
-  margin: 0px 30px;
+  margin-right: 20px;
 }
 .timerButtonContainer {
   position: absolute;
   bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
 }
 /* Media queries */
 @media (max-width: 500px) {
